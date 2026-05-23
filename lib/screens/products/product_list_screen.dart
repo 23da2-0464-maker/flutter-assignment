@@ -19,7 +19,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
   @override
   void initState() {
     super.initState();
-    // Fetch products and set the category filter
     Future.microtask(() {
       final productProvider = Provider.of<ProductProvider>(context, listen: false);
       productProvider.fetchProducts();
@@ -50,7 +49,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Search Bar
                     Padding(
                       padding: const EdgeInsets.all(AppConstants.paddingLarge),
                       child: TextField(
@@ -69,7 +67,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
                       ),
                     ),
 
-                    // Product Count
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingLarge),
                       child: Text(
@@ -81,7 +78,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
                     ),
                     const SizedBox(height: 16),
 
-                    // Products Grid
                     filteredItems.isEmpty
                         ? Padding(
                             padding: const EdgeInsets.all(32.0),

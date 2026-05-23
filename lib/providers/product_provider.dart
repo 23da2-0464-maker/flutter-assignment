@@ -8,7 +8,6 @@ class ProductProvider with ChangeNotifier {
   List<Product> _products = [];
   bool _isLoading = false;
 
-  // Search and Filter states
   String _searchQuery = '';
   String _selectedCategory = 'All';
 

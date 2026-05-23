@@ -16,7 +16,6 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   @override
   void initState() {
     super.initState();
-    // Start fetching orders as soon as the screen loads
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final userId = Provider.of<AuthProvider>(context, listen: false).user?.uid;
       if (userId != null) {

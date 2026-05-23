@@ -4,10 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'app.dart';
 
 void main() async {
-  // 1. Ensure Flutter is ready
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 2. Initialize Firebase
   if (kIsWeb) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
@@ -21,10 +19,8 @@ void main() async {
       ),
     );
   } else {
-    // This will run when you eventually build your Android APK
     await Firebase.initializeApp();
   }
 
-  // 3. Run the app
   runApp(const MyApp());
 }

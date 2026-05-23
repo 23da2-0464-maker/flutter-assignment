@@ -13,7 +13,6 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // We use context.watch so the UI rebuilds whenever notifyListeners() is called in the provider
     final cartProvider = context.watch<CartProvider>();
     final cartItems = cartProvider.items;
 
@@ -37,7 +36,6 @@ class CartScreen extends StatelessWidget {
                       return Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Product Image
                           Container(
                             width: 100,
                             height: 130,
@@ -51,7 +49,6 @@ class CartScreen extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(width: 16),
-                          // Product Details
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +77,6 @@ class CartScreen extends StatelessWidget {
                                       '\$${item.product.price.toStringAsFixed(2)}',
                                       style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold),
                                     ),
-                                    // Quantity Selector
                                     Row(
                                       children: [
                                         _quantityButton(Icons.remove, () {

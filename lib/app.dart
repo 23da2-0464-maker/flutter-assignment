@@ -14,13 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // This initializes the AuthProvider at the very top of the app
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => ProductProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => WishlistProvider()),
       ],
-      // We use a Builder here to get a 'context' that can see the AuthProvider
       child: Builder(
         builder: (context) {
           final authProvider = Provider.of<AuthProvider>(context, listen: false);
@@ -49,7 +47,6 @@ class MyApp extends StatelessWidget {
                 error: AppColors.error,
               ),
             ),
-            // Pass the authProvider into the router function
             routerConfig: AppRouter.router(authProvider),
           );
         }

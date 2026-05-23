@@ -13,6 +13,5 @@ class CartItem {
     this.selectedColor,
   });
 
-  // Helper to calculate total for this specific item
   double get total => product.price * quantity;
 }

@@ -41,7 +41,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         );
         isInitialized = true;
       } catch (e) {
-        // Product not loaded yet or doesn't exist
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Product not found')),
+        );
+        context.pop();
       }
     }
   }

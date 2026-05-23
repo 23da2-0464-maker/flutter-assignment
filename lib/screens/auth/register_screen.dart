@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart'; // Added
+import 'package:provider/provider.dart'; 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../core/routes/app_router.dart';
 import '../../widgets/common/custom_button.dart';
 import '../../widgets/common/custom_text_field.dart';
-import '../../providers/auth_provider.dart'; // Added
+import '../../providers/auth_provider.dart'; 
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -59,7 +59,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // "Watch" the loading state from your AuthProvider
     final isAuthLoading = context.watch<AuthProvider>().isLoading;
 
     return Scaffold(
@@ -102,7 +101,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 const SizedBox(height: 32),
                 
-                // Button linked to Provider loading state
                 CustomButton(
                   text: 'REGISTER',
                   onPressed: _register,
@@ -110,7 +108,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 
                 const SizedBox(height: 24),
-                // ... rest of your "Already have an account?" UI
               ],
             ),
           ),

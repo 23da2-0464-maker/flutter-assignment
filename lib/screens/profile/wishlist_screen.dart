@@ -18,7 +18,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   void initState() {
     super.initState();
-    // Fetch products if not already loaded
     Future.microtask(() {
       Provider.of<ProductProvider>(context, listen: false).fetchProducts();
     });
@@ -29,7 +28,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
     final productProvider = context.watch<ProductProvider>();
     final wishlistProvider = context.watch<WishlistProvider>();
     
-    // Get all products that are in the wishlist
     final wishlistedProducts = productProvider.products
         .where((product) => wishlistProvider.isFavorite(product.id))
         .toList();
@@ -58,7 +56,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       ),
                     ),
 
-                    // Wishlist Grid or Empty State
                     wishlistedProducts.isEmpty
                         ? Padding(
                             padding: const EdgeInsets.all(32.0),

@@ -21,7 +21,6 @@ class OrderModel {
     this.status = 'Pending',
   });
 
-  // Factory method to convert Firestore document to OrderModel
   factory OrderModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>?;
     

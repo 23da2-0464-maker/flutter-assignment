@@ -6,7 +6,7 @@ import '../../core/constants/app_text_styles.dart';
 import '../../core/constants/app_constants.dart';
 import '../../widgets/common/custom_button.dart';
 import '../../providers/cart_provider.dart';
-import '../../providers/auth_provider.dart'; // Import this to get the User ID
+import '../../providers/auth_provider.dart'; 
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -115,29 +115,25 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       }
 
       try {
-        // 2. Show a loading spinner so the user knows something is happening
         showDialog(
           context: context,
           barrierDismissible: false,
           builder: (context) => const Center(child: CircularProgressIndicator()),
         );
 
-        // 3. Save to Firestore via the method we added to CartProvider
         await cart.placeOrder(
           userId: userId,
           address: '${_addressController.text}, ${_cityController.text}',
           phone: _phoneController.text,
         );
 
-        // 4. If successful, close the loading spinner and show success dialog
         if (mounted) {
-          Navigator.pop(context); // Close loading
+          Navigator.pop(context); 
           _showSuccessDialog();
         }
       } catch (e) {
-        // Handle any database errors
         if (mounted) {
-          Navigator.pop(context); // Close loading
+          Navigator.pop(context); 
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text('Error: ${e.toString()}')),
           );

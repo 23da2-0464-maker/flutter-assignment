@@ -26,7 +26,7 @@ class Product {
     this.isFeatured = false,
     this.rating = 0.0,
     this.reviewCount = 0,
-    this.isWishlisted = false, // Default to false
+    this.isWishlisted = false, 
   });
 
   factory Product.fromFirestore(Map<String, dynamic> data, String id) {

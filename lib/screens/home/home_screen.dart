@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // --- RESTORED HEADER WITH PROFILE AND CART ---
                     Padding(
                       padding: const EdgeInsets.all(AppConstants.paddingLarge),
                       child: Row(
@@ -62,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    // Search Bar
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: TextField(
@@ -81,7 +79,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    // Categories List
                     const SizedBox(height: 24),
                     SizedBox(
                       height: 40,
@@ -114,7 +111,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    // Product Display Area
                     Padding(
                       padding: const EdgeInsets.all(16),
                       child: Text(

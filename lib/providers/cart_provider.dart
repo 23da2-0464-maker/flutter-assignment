@@ -37,7 +37,7 @@ class CartProvider with ChangeNotifier {
     if (_items[index].quantity > 1) {
       _items[index].quantity--;
     } else {
-      _items.removeAt(index); // Remove if it hits 0
+      _items.removeAt(index); 
     }
     notifyListeners();
   }
